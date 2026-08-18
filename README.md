@@ -7,4 +7,4 @@ The solution contains 4 controllers to manage the Login, Admin, Employee, Error 
 
 The login can be done using the default way after registering a new user or by using External Login with Google or Facebook.
 
-The solution contains *.cshtml file for multiple situation for case study.
+The solution contains many *.cshtml files for multiple situation for case study.
