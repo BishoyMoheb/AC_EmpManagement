@@ -1,0 +1,44 @@
+﻿@model VM_AddPassLocally_ExLogin
+
+@{
+    ViewBag.Title = "Add Password Page";
+}
+
+<div class="row">
+
+    <div class="col-md-12">
+
+        <h1>Add Local Password to Local User Account that was created from External LogIN</h1>
+
+        <hr />
+
+        <p class="text-info">
+            You have used an external account to login and this login created a local account
+            without password. Now, if you want add local password for this local account, simply 
+            set a new password in the following form. Note to remember that your email is your 
+            user name
+        </p>
+
+        <form method="post">
+
+            <div asp-validation-summary="All" class="text-danger"></div>
+
+            <div class="form-group">
+                <label asp-for="NewPassword"></label>
+                <input asp-for="NewPassword" class="form-control" />
+                <span asp-validation-for="NewPassword" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="ConfirmPassword"></label>
+                <input asp-for="ConfirmPassword" class="form-control" />
+                <span asp-validation-for="ConfirmPassword" class="text-danger"></span>
+            </div>
+
+            <button type="submit" class="btn btn-primary" style="width:auto">Add Local Password</button>
+
+        </form>
+
+    </div>
+
+</div>

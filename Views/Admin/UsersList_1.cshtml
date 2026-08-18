@@ -1,0 +1,54 @@
+﻿@model IEnumerable<IdUserExtension>
+
+@{
+    ViewBag.Title = "Users List";
+}
+
+<h1>Listing the Users</h1>
+
+@if (Model.Any())
+{
+    <a class="btn btn-primary mb-3" style="width:auto"
+       asp-controller="Account" asp-action="Register">Add new user</a>
+
+    foreach (var IdUExt in Model)
+    {
+        <div class="card m-3">
+            <div class="card-header">
+                <h3>User ID : @IdUExt.Id</h3>
+            </div>
+            <div class="card-body">
+                <h5 class="card-title">@IdUExt.UserName</h5>
+                @IdUExt.City
+            </div>
+            <div class="card-footer">
+                <form asp-controller="Admin" asp-action="DeleteUser" asp-route-Id="@IdUExt.Id" method="post">
+                    <a class="btn btn-primary" asp-controller="Admin"
+                       asp-action="EditUsers" asp-route-Id="@IdUExt.Id">Edit</a>
+                    <button type="submit" class="btn btn-danger" 
+                            onclick="return confirm('Do you want to delete user: @IdUExt.UserName')">
+                        Delete
+                    </button>
+                </form>
+            </div>
+        </div>
+    }
+}
+else
+{
+    <div class="card">
+        <div class="card-header">
+            <h3>No user(s) exists</h3>
+        </div>
+        <div class="card-body">
+            <h5 class="card-title">
+                Use the button below to create a user
+            </h5>
+            <a class="btn btn-primary" style="width:auto"
+               asp-controller="Account" asp-action="Register">
+                Add new user
+            </a>
+        </div>
+    </div>
+}
+

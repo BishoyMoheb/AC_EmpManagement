@@ -1,0 +1,15 @@
+﻿@{
+    ViewBag.Title = "Account Locked Out Page";
+}
+
+    <h1 class="text-danger font-weight-bolder">
+        Locked Out
+    </h1>
+
+    <h3 class="text-danger">
+        Due to multiple attempts of failure login, you were Locked OUT.
+        Please try again later or you may reset your password,
+        <a asp-action="ForgotPassword"  asp-controller="Account">
+            click to reset
+        </a>
+    </h3>
